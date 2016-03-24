@@ -33,7 +33,8 @@ def main():
 
     for folder in REQ_FOLDERS:
         os.mkdir(os.path.join(os.getcwd(), folder))
-
+	
+	make_files('.', BASE_FILES)
     make_files('.\\docs', DOCS_FILES)
     make_files('.\\{}'.format(PROJECT_NAME), PROJECT_FILES)
     make_files('.\\{}\\tests'.format(PROJECT_NAME), TESTS_FILES)

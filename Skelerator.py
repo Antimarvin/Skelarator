@@ -6,7 +6,7 @@ PROJECT_NAME = os.path.basename(os.getcwd())
 REQ_FOLDERS = ['bin', 'docs', 'tools', 'etc', PROJECT_NAME, os.path.join(PROJECT_NAME, 'tests')]
 BASE_FILES = ['README.TXT', 'requirements.txt', 'setup.py', 'test-requirements.txt']
 DOCS_FILES = ['conf.py', 'index.txt', 'quickstart.txt']
-PROJECT_FILES = ['__init__.py', 'cli.py', 'storage.py']
+PROJECT_FILES = ['__init__.py', 'cli.py', 'storage.py', '{}.py'.format(PROJECT_NAME)]
 TESTS_FILES = ['__init__.py', 'test_cli.py', 'test_storage.py']
 
 
@@ -33,8 +33,8 @@ def main():
 
     for folder in REQ_FOLDERS:
         os.mkdir(os.path.join(os.getcwd(), folder))
-	
-	make_files('.', BASE_FILES)
+
+    make_files('.', BASE_FILES)
     make_files('.\\docs', DOCS_FILES)
     make_files('.\\{}'.format(PROJECT_NAME), PROJECT_FILES)
     make_files('.\\{}\\tests'.format(PROJECT_NAME), TESTS_FILES)
